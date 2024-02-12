@@ -5,6 +5,7 @@ import random
 import requests
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel
+from PyQt5.
 
 SCREEN_SIZE = [600, 450]
 
@@ -65,10 +66,15 @@ class Example(QWidget):
         self.image.setPixmap(self.pixmap)
 
 
+def except_hook(cls, exception, traceback):
+    sys.__excepthook__(cls, exception, traceback)
+
+
 if __name__ == '__main__':
     x = input()
     y = input()
     app = QApplication(sys.argv)
     ex = Example()
     ex.show()
+    sys.excepthook = except_hook
     sys.exit(app.exec())
