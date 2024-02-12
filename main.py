@@ -8,9 +8,6 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 
 SCREEN_SIZE = [600, 450]
 
-x = random.randint(0, 90)
-y = random.randint(0, 90)
-
 
 class Example(QWidget):
     def __init__(self):
@@ -50,6 +47,8 @@ class Example(QWidget):
 
 
 if __name__ == '__main__':
+    x = input()
+    y = input()
     app = QApplication(sys.argv)
     ex = Example()
     ex.show()
